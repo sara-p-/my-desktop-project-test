@@ -1,7 +1,4 @@
 import styles from './Dock.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHouse } from '@fortawesome/free-solid-svg-icons'
-import type { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import type { AppStateType } from '../../../types/appType'
 import { useAtom } from 'jotai'
 import { appStateAtom } from '../../../atoms/atoms'
@@ -11,7 +8,7 @@ export default function Dock() {
   return (
     <div className={styles.dock}>
       <div className={styles.container}>
-        <DockItem name='finder' icon={faHouse as IconDefinition} />
+        <DockItem name='finder' img={'/finder-icon.png'} />
       </div>
     </div>
   )
@@ -20,10 +17,10 @@ export default function Dock() {
 // DockItem component that contains a single dock item
 export function DockItem({
   name,
-  icon,
+  img,
 }: {
   name: keyof AppStateType
-  icon: IconDefinition
+  img: string
 }) {
   // Grab the app states and the app state setter from Jotai
   const [appState, setAppState] = useAtom(appStateAtom)
@@ -35,7 +32,7 @@ export function DockItem({
 
   return (
     <button className={styles.dockItem} onClick={() => handleClick(name)}>
-      <FontAwesomeIcon icon={icon} />
+      <img src={img} alt={name} className={styles.dockItemImg} />
       <span className={styles.dockItemName}>{name}</span>
     </button>
   )

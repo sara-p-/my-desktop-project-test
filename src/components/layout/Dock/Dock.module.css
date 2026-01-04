@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 4px;
+  padding: 8px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -13,20 +13,29 @@
   left: 0;
   right: 0;
   z-index: 100;
-  border: 1px solid var(--dark-gray);
+  border: 0.5px solid var(--transparent-white);
+  background-color: var(--primary);
+  border-radius: 16px;
 }
 
 .dockItem {
-  width: auto;
-  height: auto;
+  width: 40px;
+  height: 40px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  font-size: 36px;
-  color: var(--primary);
+  color: var(--blue);
   text-decoration: none;
   position: relative;
   padding: 0;
+  object-fit: contain;
+  object-position: center;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+  }
 }
 
 .dockItemName {
@@ -48,6 +57,7 @@
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
   pointer-events: none;
+  border: 0.5px solid var(--transparent-white);
   &::after {
     content: '';
     position: absolute;
@@ -59,6 +69,19 @@
     border-width: 8px 8px 0 8px;
     border-style: solid;
     border-color: var(--primary) transparent transparent transparent;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-width: 9px 9px 0 9px;
+    border-style: solid;
+    border-color: var(--transparent-white) transparent transparent transparent;
+    /* z-index: 2; */
   }
 }
 

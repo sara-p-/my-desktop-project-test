@@ -1,8 +1,7 @@
 .header {
   width: 100%;
   color: var(--primary);
-  background-color: var(--primary);
-  border-bottom: 1px solid var(--secondary);
+  background-color: var(--transparent-secondary);
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +12,7 @@
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 16px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -31,7 +30,7 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 8px 0;
+  padding: 0;
 }
 
 .navList {

@@ -7,15 +7,24 @@
   color-scheme: light dark;
   --black: rgb(36, 36, 36);
   --white: #ffffff;
-  --dark-gray: rgb(54, 54, 54);
+  --dark-grey: rgb(54, 54, 54);
   --gray: #808080;
   --blue: #646cff;
   --red: rgb(214, 73, 73);
   --red-dark: rgb(152, 51, 51);
 
+  --transparent-white: rgba(255, 255, 255, 0.5);
+  --transparent-black: rgba(36, 36, 36, 0.5);
+  --transparent-dark-grey: rgba(54, 54, 54, 0.85);
+
   --primary: var(--black);
   --secondary: var(--white);
   --accent: var(--gray);
+  --transparent-primary: var(--transparent-black);
+  --transparent-secondary: var(--transparent-white);
+  --transparent-accent: var(--transparent-dark-grey);
+
+  --border: 0.5px solid var(--transparent-secondary);
 
   color: var(--secondary);
   background-color: var(--primary);
