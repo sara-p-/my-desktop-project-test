@@ -2,16 +2,18 @@ import './App.css'
 import Header from './components/layout/Header/Header'
 import Desktop from './components/layout/Desktop/Desktop'
 import Dock from './components/layout/Dock/Dock'
-import OpenFinderContextProvider from './contexts/OpenFinder/OpenFinderContextProvider'
+import Finder from './components/features/Finder/Finder'
+import { appStateAtom } from './atoms/atoms'
+import { useAtom } from 'jotai'
 
 function App() {
+  const [appState] = useAtom(appStateAtom)
   return (
     <>
-      <OpenFinderContextProvider>
-        <Header />
-        <Desktop />
-        <Dock />
-      </OpenFinderContextProvider>
+      <Header />
+      <Desktop />
+      {appState.finder && <Finder />}
+      <Dock />
     </>
   )
 }
