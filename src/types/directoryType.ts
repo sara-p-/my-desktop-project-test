@@ -1,8 +1,10 @@
-export interface DirectoryType {
+export interface DirectoryItemType {
   name: string
   id: string
   path: string
-  type: 'file' | 'folder'
-  children: DirectoryType[] | null
-  parent: DirectoryType | null
+  type: DirectoryType
+  children: DirectoryItemType[] | null
+  parent: DirectoryItemType | null
 }
+
+export type DirectoryType = 'file' | 'folder'
