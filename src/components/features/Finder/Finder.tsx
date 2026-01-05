@@ -7,7 +7,7 @@ export default function Finder() {
       <div className={styles.finderContainer}>
         <div className={styles.sidebar}>
           <div className={styles.sidebarHeader}>
-            <CloseButton />
+            <CloseButton name='finder' />
           </div>
           <div className={styles.sidebarContent}>
             <ul className={styles.sidebarList}>
@@ -18,8 +18,8 @@ export default function Finder() {
           </div>
         </div>
         <div className={styles.contentContainer}>
-          <div className={styles.header}>
-            <h1>Finder</h1>
+          <div className={styles.contentHeader}>
+            <h1 className={styles.contentHeaderTitle}>Finder</h1>
           </div>
           <div className={styles.content}>
             <div className={styles.column}>
