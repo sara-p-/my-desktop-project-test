@@ -1,0 +1,44 @@
+button {
+  all: unset;
+}
+
+.trigger {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0;
+  color: var(--primary);
+  &:hover {
+    background-color: var(--transparent-primary);
+  }
+  &:focus {
+    background-color: var(--transparent-primary);
+  }
+}
+
+.container {
+  min-width: 220px;
+  background-color: var(--transparent-dark-grey);
+  border: 0.5px solid var(--transparent-white);
+  border-radius: 6px;
+  padding: 5px;
+}
+
+.item {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  margin: 0;
+}

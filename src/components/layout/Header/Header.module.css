@@ -18,12 +18,19 @@
   align-items: center;
 }
 
-.logo {
+.logoButton {
   width: 18px;
   height: 18px;
   object-fit: contain;
   object-position: center;
   margin-right: 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--primary);
+  &:hover {
+    color: var(--blue);
+  }
 }
 
 .nav {

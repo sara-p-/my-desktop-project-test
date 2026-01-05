@@ -1,19 +1,18 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import styles from './Header.module.css'
+import { faComputer } from '@fortawesome/free-solid-svg-icons'
+import DropDownMenu from '../../ui/DropDownMenu/DropDownMenu'
 
 export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <a href='/'>
-          <img src='/vite.svg' alt='Logo' className={styles.logo} />
-        </a>
-        <nav className={styles.nav}>
-          <ul className={styles.navList}>
-            <li className={styles.navListItem}>
-              <NewFolderButton />
-            </li>
-          </ul>
-        </nav>
+        <button className={styles.logoButton}>
+          <FontAwesomeIcon icon={faComputer} />
+        </button>
+        <div className={styles.menuButtons}>
+          <DropDownMenu />
+        </div>
       </div>
     </header>
   )
