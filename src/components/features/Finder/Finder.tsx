@@ -3,8 +3,6 @@ import CloseButton from '../../ui/CloseButton/CloseButton'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons/faChevronRight'
 import type { DirectoryType } from '../../../types/directoryType'
-import { faFolder } from '@fortawesome/free-solid-svg-icons/faFolder'
-import { faFile } from '@fortawesome/free-solid-svg-icons/faFile'
 
 export default function Finder() {
   // create a const to loop through from numbers 0-5
@@ -18,11 +16,21 @@ export default function Finder() {
             <CloseButton name='finder' />
           </div>
           <div className={styles.sidebarContent}>
-            <ul className={styles.sidebarList}>
-              <li className={styles.sidebarListItem}>
-                <p>Desktop</p>
-              </li>
-            </ul>
+            <div className={styles.sidebarRow}>
+              <h2 className={styles.sidebarRowTitle}>Locations</h2>
+              <ul className={styles.sidebarList}>
+                <li className={styles.sidebarListItem}>
+                  <button className={styles.sidebarItemButton}>
+                    <span className={styles.sidebarItemButtonIcon}>
+                      <img src={'/folder-icon-small.png'} alt='desktop' />
+                    </span>
+                    <span className={styles.sidebarItemButtonText}>
+                      Desktop
+                    </span>
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         <div className={styles.contentContainer}>
@@ -68,11 +76,13 @@ export function FinderItem({
     <li className={styles.columnListItem}>
       <button className={styles.itemButton}>
         <span className={styles.itemLabel}>
-          {type === 'folder' ? (
-            <FontAwesomeIcon icon={faFolder}></FontAwesomeIcon>
-          ) : (
-            <FontAwesomeIcon icon={faFile}></FontAwesomeIcon>
-          )}
+          <span className={styles.itemIcon}>
+            {type === 'folder' ? (
+              <img src={'/folder-icon-small.png'} alt='folder' />
+            ) : (
+              <img src={'/file-icon-small.png'} alt='file' />
+            )}
+          </span>
           <span className={styles.itemName}>{name}</span>
         </span>
         {type === 'folder' && (
